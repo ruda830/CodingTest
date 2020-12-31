@@ -9,3 +9,11 @@ pythonのクラスで定義できる変数には、２種類あります。
     インスタンス変数は、インスタンスに依存している変数です。インスタンスを複数作成すればそれぞれ異なる値をもちます。
 
 '''
+
+class TestClass5:
+    val = "クラス変数"
+    def __init__(self, arg):
+        self.x = arg
+
+testClass5_1 = TestClass5("インスタンス変数1")
+testClass5_2 = TestClass5("インスタンス変数1")
