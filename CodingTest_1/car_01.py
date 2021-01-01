@@ -20,36 +20,43 @@ class Taxi:
         self.teisoku_money = 0
 
 
-    def hatu(self, hatu_money):
-        hatu_money = 410
+    def hatu(self):
+        self.hatu_money = 410
 
-    def kasan(self, kasan_money):
-        kasan_money += 80
+    def kasan(self):
+        self.kasan_money += 80
 
-    def teisoku(self, teisoku_money):
-        teisoku_money += 80
-
-#hatu_money, kasan_money, teisoku引数にいる？
-    def unchin(self, unchin, hatu_money):
-        unchin = hatu_money + kasan_money + teisoku
-        return unchin
+    def teisoku(self):
+        self.teisoku_money += 80
+    """
+        #本当はgoukeiの変数を使いたい。
+        #hatu_money, kasan_money, teisoku引数にいる？←いらないっぽい
+        def unchin(self, goukei):
+            goukei = self.hatu_money + self.kasan_money + self.teisoku
+            return goukei
+    """
+    def unchin(self):
+        return print(self.hatu_money + self.kasan_money + self.teisoku_money)
 
     def taxi_step(self):
-        print("タクシー乗ったよ")
-
-taxi = Taxi()
-while True:
-    action = int(input("走った距離を教えてください："))
-    if action > 1052:
-        #ここが上手くかけない
-        taxi.hatu()
-    else:
-        print("計算できません")
+        print("タクシー乗車中")
 
 
-    taxi.unchin(200)
-    taxi.taxi_step()
+if __name__ == '__main__':
 
+    taxi = Taxi()
+    while True:
+        action = int(input("走った距離を教えてください："))
+        if action > 1052:
+            #ここが上手くかけない
+            taxi.hatu()
+        else:
+            print("計算できません")
+
+
+        taxi.unchin()
+        taxi.taxi_step()
+        break
 
 
 

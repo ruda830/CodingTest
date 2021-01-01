@@ -6,7 +6,7 @@ class Car:
         self.odometer = 0
         self.time = 0
     """
-    #引数の勉強
+    #引数の勉強で書き換えた
     def __init__(self):
         self.speed = 0
         self.odometer = 0
@@ -15,7 +15,9 @@ class Car:
     def say_state(self):
         print("I'm going {} kph!".format(self.speed))
 
+    # 引数はself.speedをいれなくてOK
     def accelerate(self):
+        #変数はspeedではなくてself.speedと書く
         self.speed += 5
 
     def brake(self):
