@@ -15,7 +15,7 @@ a.
 class Taxi:
 
     def __init__(self):
-        self.hatu_money = 0
+        self.hatu_money = 410
         self.kasan_money = 0
         self.teisoku_money = 0
 
@@ -29,24 +29,25 @@ class Taxi:
     def teisoku(self, teisoku_money):
         teisoku_money += 80
 
-
-    def unchin(self, unchin):
+#hatu_money, kasan_money, teisoku引数にいる？
+    def unchin(self, unchin, hatu_money):
         unchin = hatu_money + kasan_money + teisoku
-        return goukei
+        return unchin
 
     def taxi_step(self):
         print("タクシー乗ったよ")
 
 taxi = Taxi()
 while True:
-    action = input("走った距離を教えてください：")
-    if action >= 1052:
-        return hatu()
+    action = int(input("走った距離を教えてください："))
+    if action > 1052:
+        #ここが上手くかけない
+        taxi.hatu()
     else:
         print("計算できません")
 
 
-    taxi.unchin()
+    taxi.unchin(200)
     taxi.taxi_step()
 
 
