@@ -15,13 +15,13 @@ a.
 class Taxi:
 
     def __init__(self):
-        self.hatu_money = hatu_money
-        self.kasan_money = kasan_money
-        self.teisoku_money = teisoku_money
+        self.hatu_money = 0
+        self.kasan_money = 0
+        self.teisoku_money = 0
 
 
     def hatu(self, hatu_money):
-        return 410
+        hatu_money = 410
 
     def kasan(self, kasan_money):
         kasan_money += 80
@@ -30,13 +30,24 @@ class Taxi:
         teisoku_money += 80
 
 
-    def ryoukinn(self, unchin):
+    def unchin(self, unchin):
         unchin = hatu_money + kasan_money + teisoku
         return goukei
 
+    def taxi_step(self):
+        print("タクシー乗ったよ")
+
 taxi = Taxi()
+while True:
+    action = input("走った距離を教えてください：")
+    if action >= 1052:
+        return hatu()
+    else:
+        print("計算できません")
 
 
+    taxi.unchin()
+    taxi.taxi_step()
 
 
 
