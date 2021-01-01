@@ -21,6 +21,7 @@ class Taxi:
 
 
     def hatu(self):
+        #ここは今後の拡張を考えてメゾット化
         self.hatu_money = 410
 
     def kasan(self):
@@ -42,10 +43,11 @@ if __name__ == '__main__':
     while True:
         action = int(input("走った距離を教えてください："))
         #走行距離と料金の計算。int(1052 + (走行距離-1052)/237)ずつ80円増
-        if action > 1052:
+        if action <= 1052:
             #ここが上手くかけない
             taxi.hatu()
         else:
+
             print("計算できません")
 
 
@@ -62,6 +64,26 @@ if __name__ == '__main__':
         goukei = self.hatu_money + self.kasan_money + self.teisoku
         return goukei                        
 """
+"""
+kasanの計算コードが2パターンある。と思う。
+１．メゾットkasanに条件分岐　　変数にnかけるか。
+class taxi:
+    def __init__(self):
+        self.n = int((走行距離-1052)/237)
+    def kasan(self):
+        if n<0:
+            pass
+        else:
+            self.kasan_money += 80 * n
 
+２．__main__下に、条件分岐　　メゾットをn回呼び出すか。
+n = int((走行距離-1052)/237)
+if n<0:
+    hatu()
+    unchin()
+else:
+    kasan()がn回呼び出し
+    unchin()
+"""
 
 
