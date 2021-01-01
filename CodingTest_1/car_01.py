@@ -9,30 +9,33 @@ c,深夜料金になる22時をまたいだ場合、料金がどうなるか考�
 
 '''
 a.
+円と距離を分離して考えた方がいい。
 '''
 
-class Car:
+class Taxi:
 
     def __init__(self):
-        self.first_money = 410
-        self.accelerate_money = 80
-
-    #def hatu(self, first_money):
-
+        self.hatu_money = hatu_money
+        self.kasan_money = kasan_money
+        self.teisoku_money = teisoku_money
 
 
-    #def kasan(self, accelerate_money):
+    def hatu(self, hatu_money):
+        return 410
+
+    def kasan(self, kasan_money):
+        kasan_money += 80
+
+    def teisoku(self, teisoku_money):
+        teisoku_money += 80
 
 
-    def ryoukinn(self, first_money, accelerate_money):
-
-        goukei = first_money + accelerate_money
-
+    def ryoukinn(self, unchin):
+        unchin = hatu_money + kasan_money + teisoku
         return goukei
 
-car = Car()
+taxi = Taxi()
 
-print(car.ryoukinn(100, 10))
 
 
 
