@@ -7,34 +7,27 @@ c,深夜料金になる22時をまたいだ場合、料金がどうなるか考�
 
 '''
 
-'''
-a.
-円と距離を分離して考えた方がいい。
-'''
-
 class Taxi:
 
     def __init__(self):
         self.hatu_money = 410
         self.kasan_money = 0
-        self.teisoku_money = 0
+        self.action_num = 0
 
-
-    def hatu(self):
-        #ここは今後の拡張を考えてメゾット化
-        self.hatu_money = 410
-
-    def kasan(self):
-        self.kasan_money += 80
-
-    def teisoku(self):
-        self.teisoku_money += 80
+    def kasan(self, load):
+        # 1052m超えてからの加算回数とその金額を計算
+        nums = int((load - 1052) / 237)
+        for num in range(nums):
+            self.kasan_money += 80
+        return self.kasan_money
 
     def unchin(self):
-        return print(self.hatu_money + self.kasan_money + self.teisoku_money)
+        # unchinの合計を出力
+        # 本当は 関数内で unchin = self.hatu_money + self.kasan_money としたいのに出来ない…。
+        return self.hatu_money + self.kasan_money
 
     def taxi_step(self):
-        print("タクシー乗車中")
+        print("タクシー降車中")
 
 
 if __name__ == '__main__':
@@ -42,21 +35,18 @@ if __name__ == '__main__':
     taxi = Taxi()
     while True:
         action = int(input("走った距離を教えてください："))
-        #走行距離と料金の計算。int(1052 + (走行距離-1052)/237)ずつ80円増
-        if action <= 1052:
-            #ここが上手くかけない
-            taxi.hatu()
-        else:
-
-            print("計算できません")
-
-
-        taxi.unchin()
+        #例)　3km　→　3000m (1052m+1948m)　→　410+640 = 1050円
+        taxi.kasan(action)
+        goukei = taxi.unchin()
+        print("合計は"+str(goukei)+"円です。")
         taxi.taxi_step()
         break
 
 
 #ここからメモ--------------------------------------------------
+"""
+お金と距離を分離して考えた方がいい。
+"""
 """
 #本当はgoukeiの変数を使いたい。
 #hatu_money, kasan_money, teisoku引数にいる？←いらないっぽい
