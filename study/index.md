@@ -12,6 +12,7 @@
 3．A successful Git branching modelについて
 
 ![img.png](git_img.png)
+https://backlog.com/ja/git-tutorial/stepup/05/　より引用
 
 この運用モデルでは、大きく分けて  
 
