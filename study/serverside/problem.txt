@@ -1,0 +1,27 @@
+＜今後の主な課題＞
+json読み込み(パース)
+https://hibiki-press.tech/python/json/1633
+コマンドラインオプション
+https://qiita.com/studio_haneya/items/73efcc48536c68830203
+
+mySQLテーブル製作
+https://www.dbonline.jp/mysql/table/index1.html
+
+ネスト構造の辞書へアクセス
+https://techacademy.jp/magazine/20696
+
+辞書の基本的操作方法
+https://www.headboost.jp/python-everything-to-know-about-dict/
+
+jsonの全検索 for文
+https://qiita.com/kikuchiTakuya/items/53990fca06fb9ba1d8a7
+
+
+
+URLからjson引っ張ってくる方法
+https://hibiki-press.tech/python/json/1633
+
+
+エラー一覧
+【Python】TypeError: string indices must be integers, not str
+https://blog.suganoo.net/entry/2019/02/05/164341
