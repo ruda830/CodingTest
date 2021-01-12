@@ -11,5 +11,10 @@ N A B
 10進法での各桁の和がA以上B以下であるものの総和
 """
 
-if (A <= n <= B):
-    
+N, A, B = map(int, input().split())
+ans = 0
+for i in range(N+1):
+    #ここが分からん
+    if A <= sum(list(map(int, str(i)))) <= B:
+        ans += i
+print(ans)
