@@ -18,6 +18,17 @@ N = int(input()) # 入力回数をNとして受け取る
 list = [input() for i in range(N)]
 #print(list) ->['oxox', 'xxox', 'ooxo', 'oooo']
 cnt = 0
+if __name__ == '__main__':
+    alllist = []
+    for j in range(N):
+        alllist += list[j]
+
+    for k in range(N):
+        if alllist[k::N+1].count('o') == N: #ifの位置ここでいいのかわからん。
+            print('Yes')
+            break
+        else:
+            print('debag')
 
 try:
     for i in range(N): #もしtryの上にこれ書くと一つずつYesNo判定されてしまう。
