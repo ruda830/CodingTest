@@ -41,25 +41,3 @@ testClass3 = TestClass3(1,2)
 # > init:[1, 2]
 
 
-
-#アウトプット用------------------------------------------------------
-class TestClass_myself:
-    val = []
-
-    def __init__(self, xx):
-
-        self.val.append(1)
-        self.val.append(2)
-        self.val.append(3)
-        self.val.append(xx)
-
-        print("init:" + str(self.val))
-
-    def test_method1(self, yy):
-        print("test_method2:" + str(self.val) + yy)
-
-
-testClass_myself = TestClass_myself(44)
-# > init:[1,2,3,44]
-testClass_myself.test_method1("11")
-# > test_method2:[1,2,3,44]11
